@@ -23,14 +23,5 @@ def face_detect(img,face_cascade):
     # Detect faces # detection algorithm uses a moving window to detect objects
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, # Since some faces may be closer to the camera, they would appear bigger than the faces in the back. The scale factor compensates for this.
                                     )
-    # Draw rectangle around the faces
-    for (x, y, w, h) in faces:
-        #draw rectangles where face is detected
-        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-        
-        #Extracts the face from grayimg, resizes and flattens
-        face = gray[y:y + h, x:x + w]
-        face = cv2.resize(face, (200,200))
-        #face = face.ravel()
 
-    return img, faces
+    return gray, faces
