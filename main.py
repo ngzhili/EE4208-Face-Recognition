@@ -108,8 +108,8 @@ while(True):
         index =  np.argmin(np.linalg.norm(test_weight - weights, axis=1))    
         #print('Predicted index:',index)
         #print('Test Face:',test_add.split('/')[-1].split('_')[0])
-        print('Predicted Face:',face_path[index].split('_')[0])
-        cv2.putText(frame, face_path[index].split('_')[0], (x+5,y-5), font, 1, (255,255,255) , 2)
+        #print('Predicted Face:',face_path[index].split('_')[0])
+        cv2.putText(frame, face_path[index].split('_')[0], (x+5,y-5), font, 0.7, (255,255,255) , 2)
 
     cv2.putText(frame, f'Number of Faces Detected: {len(faces)}', (10,20), font, 0.7, (255,255,255) , 2)
             

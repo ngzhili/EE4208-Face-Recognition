@@ -42,7 +42,7 @@ face_vector = face_vector.transpose()
 #print(face_vector)
 
 
-# noramlizing face vectors
+# normalizing face vectors
 avg_face_vector = face_vector.mean(axis=1)
 avg_face_vector = avg_face_vector.reshape(face_vector.shape[0], 1)
 normalized_face_vector = face_vector - avg_face_vector
@@ -67,7 +67,7 @@ k_eigen_vectors = eigen_vectors[0:k, :]
 eigen_faces = k_eigen_vectors.dot(normalized_face_vector.T)
 #print(eigen_faces.shape)
 
-# STEP7: Represent Each eigen face as combination of the K Eigen Vectors
+# Represent Each eigen face as combination of the K Eigen Vectors
 # weights = eigen_faces.dot(normalized_face_vector)
 weights = np.transpose(normalized_face_vector).dot(np.transpose(eigen_faces))
 #print(weights)
